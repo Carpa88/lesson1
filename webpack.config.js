@@ -2,15 +2,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './index.html'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+    template: './src/index.html'
+  }),
+    new CleanWebpackPlugin()
+  ],
+  
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'build'),
@@ -31,9 +36,13 @@ module.exports = {
           use: ['style-loader', 'css-loader'],
         },
        {
-         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-         type: 'asset/resource',
-       },
-      ]
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          publicPath: '/i/',
+          postTransformPublicPath: (p) => `__dirname + ${p}`,
+        },
+      }
+      ]   
   }
 };
