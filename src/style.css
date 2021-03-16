@@ -6,7 +6,8 @@
 .article_title{
     margin-top: 30px;
     margin-bottom: 20px;
-    padding: 50px auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     color: white;
     font-weight: normal;
 }
