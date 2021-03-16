@@ -32,17 +32,17 @@ module.exports = {
         }
       },
       {
-          test: /\.css$/i,
+          test: /\.css$/,
           use: ['style-loader', 'css-loader'],
         },
-       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          publicPath: '/i/',
-          postTransformPublicPath: (p) => `__dirname + ${p}`,
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/,
+          type: 'asset/resource',
         },
-      }
+        {
+          test: /\.html$/,
+          loader: 'html-loader',
+        },
       ]   
   }
 };
