@@ -1,16 +1,29 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
-let div = document.createElement('div');
-let p = document.createElement('p');
-let button = document.createElement('button');
-div.className = "text_list-box";
+document.getElementById('addItemButton').onclick = addItem;
 
-p.innerHTML = "Всем привет! Вы прочитали важное сообщение.";
-p.className = "text_list_item";
+function addItem () {
 
-button.innerText = 'Delete';
-button.className = "text_list-button";
+  let div = document.createElement('div');
+  let p = document.createElement('p');
+  let button = document.createElement('button');
+  
+  div.className = "text_list_box";
+  
+  p.innerHTML = "To do Item.";
+  p.className = "text_list_item";
+  
+  button.innerText = 'Delete';
+  button.className = "button_delete";  
+  button.onclick = deleteItem;
+  
+  document.body.append(div);
+  div.append(p, button);
+};
 
-document.body.append(div);
-div.append(p, button);
+    
+function deleteItem(){
+ let divDel = this.closest('.text_list_box');
+ divDel.remove();
+};
