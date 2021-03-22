@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
 document.getElementById('addItemButton').onclick = addItem;
+let input = document.getElementById('input');
 
 function addItem () {
 
@@ -11,7 +12,7 @@ function addItem () {
   
   div.className = "text_list_box";
   
-  p.innerHTML = "To do Item.";
+  p.innerHTML = input.value || 'Enter to-do-item, please';
   p.className = "text_list_item";
   
   button.innerText = 'Delete';
@@ -20,6 +21,8 @@ function addItem () {
   
   document.body.append(div);
   div.append(p, button);
+
+  input.value = '';
 };
 
     
