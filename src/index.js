@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
-document.getElementById('addItemButton').onclick = addItem;
+document.getElementById('button-addon2').onclick = addItem;
 let input = document.getElementById('input');
 
 function addItem () {
