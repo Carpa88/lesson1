@@ -10,16 +10,16 @@ function addItem () {
   let p = document.createElement('p');
   let button = document.createElement('button');
   
-  div.className = "text_list_box";
+  div.className = "text_list_box row justify-content-start";
   
   p.innerHTML = input.value || 'Enter to-do-item, please';
-  p.className = "text_list_item";
+  p.className = "text_list_item col-11";
   
   button.innerText = 'Delete';
-  button.className = "button_delete";  
+  button.className = "col-1 button_delete btn btn-dark";  
   button.onclick = deleteItem;
   
-  document.body.append(div);
+  document.getElementById('container').append(div);
   div.append(p, button);
 
   input.value = '';
