@@ -5,3 +5,7 @@
 .button_delete{
     align-self: start;
 }
+.error-text {
+    color: red;
+    text-align: center; 
+}

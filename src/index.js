@@ -12,7 +12,8 @@ function addItem () {
   
   div.className = "text_list_box row justify-content-start";
   
-  p.innerHTML = input.value || 'Enter to-do-item, please';
+  if (input.value) {
+  p.innerHTML = input.value;
   p.className = "text_list_item col-11";
   
   button.innerText = 'Delete';
@@ -23,8 +24,24 @@ function addItem () {
   div.append(p, button);
 
   input.value = '';
+  
+  deleteError();
+
+  }else{
+    deleteError();
+
+    p.innerHTML = "Enter to-do-item, please";
+    p.className = "error-text";
+    document.getElementById('container').prepend(p);
+  }
 };
 
+function deleteError(){
+  let error = document.querySelector('.error-text');
+  if( error ){  
+  error.remove();
+  }
+}
     
 function deleteItem(){
  let divDel = this.closest('.text_list_box');
