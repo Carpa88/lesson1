@@ -2,9 +2,6 @@
     margin: 100px 0 30px 0;
     color: #007bff;
 }
-.button_delete{
-    align-self: start;
-}
 .error-text {
     color: red;
     text-align: center; 

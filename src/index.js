@@ -5,23 +5,28 @@ document.getElementById('button-addon2').onclick = addItem;
 let input = document.getElementById('input');
 
 function addItem () {
-
-  let div = document.createElement('div');
+  let div1 = document.createElement('div');
+  let div2 = document.createElement('div');
   let p = document.createElement('p');
-  let button = document.createElement('button');
-  
-  div.className = "text_list_box row justify-content-start";
+  let a = document.createElement('a');
+
+  div1.className = "text_list_box card";
+  div2.className = "card-body";
+
+  input.value = 'dsfbsdr;jk;sejkrbnsk;rjbn';
   
   if (input.value) {
   p.innerHTML = input.value;
-  p.className = "text_list_item col-11";
+  p.className = "card-text";
   
-  button.innerText = 'Delete';
-  button.className = "col-1 button_delete btn btn-dark";  
-  button.onclick = deleteItem;
+  a.className = "button_delete btn btn-primary";  
+  a.innerHTML = "Delete";
+  a.href = '#';
+  a.onclick = deleteItem;
   
-  document.getElementById('container').append(div);
-  div.append(p, button);
+  document.getElementById('container').append(div1);
+  div1.append(div2);
+  div2.append(p, a);
 
   input.value = '';
   
