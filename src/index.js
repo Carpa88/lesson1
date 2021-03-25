@@ -32,7 +32,7 @@ function addItem () {
 
     p.innerHTML = "Enter to-do-item, please";
     p.className = "error-text";
-    document.getElementById('container').prepend(p);
+    document.getElementById('to-do-form').after(p);
   }
 };
 
