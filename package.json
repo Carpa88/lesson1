@@ -38,6 +38,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "jquery": "^3.6.0"
   }
 }
