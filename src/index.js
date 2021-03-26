@@ -9,21 +9,18 @@ function addItem () {
   let div2 = document.createElement('div');
   let p = document.createElement('p');
   let label = document.createElement('label');
-  let input = document.createElement('input');
+  let checkbox = document.createElement('input');
   let a = document.createElement('a');
 
-  
-  input.value = 'SLint крайне необходим при работе в команде. Зачем? Да опять же, все очень просто! Кто-то привык ставить в конце точку с запятой, кто-то нет, кто-то максимум пишет 80 символов в строку, кто-то 120, а кто-то громоздит вообще сколько душе угодно. В конечно итоге - ваш код или код вашей команды может превратиться в сплошную кашу.';
-  
   if (input.value) {
   div1.className = "card";
   div2.className = "card-body";
   p.className = "card-text";
 
-  input.type = 'checkbox';
-  input.className = 'form-check-input';
-  input.id="flexCheckDefault";
-  input.onchange = lineThrough;
+  checkbox.type = 'checkbox';
+  checkbox.className = 'form-check-input';
+  checkbox.id="flexCheckDefault";
+  checkbox.onchange = lineThrough;
 
   label.innerHTML = input.value;
   label.className = 'form-check-label';
@@ -37,7 +34,7 @@ function addItem () {
   document.getElementById('container').append(div1);
   div1.append(div2);
   div2.append(p, a);
-  p.append(input, label);
+  p.append(checkbox, label);
 
   input.value = '';
   
