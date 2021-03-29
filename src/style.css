@@ -6,10 +6,9 @@
     color: red;
     text-align: center; 
 }
-.card-body, .card{
-    border-right: none;
-    border-left: none;
-}
 .line-through {
     text-decoration: line-through;
+}
+.form-check-input {
+    margin-right: 10px;
 }
