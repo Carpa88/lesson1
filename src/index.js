@@ -11,6 +11,7 @@ function addItem () {
   let div2 = document.createElement('div');
   let p = document.createElement('p');
   let label = document.createElement('label');
+  let checkbox = document.createElement('input');
   let a = document.createElement('a');
   
   input.value = 'Get started with Bootstrap via npm with our starter project! Head to the twbs/bootstrap-npm-starter template repository to see how to build and customize Bootstrap in your own npm project. Includes Sass compiler, Autoprefixer, Stylelint, PurgeCSS, and Bootstrap Icons.'
@@ -22,18 +23,21 @@ function addItem () {
 
   label.innerHTML = input.value;
   label.className = 'form-check-label';
+  label.onclick = chengeCheckbox;
+
+  checkbox.type = 'checkbox';
+  checkbox.className = 'form-check-input';
+  checkbox.onchange = lineThrough;
   
   a.className = "btn btn-primary";  
   a.innerHTML = "Delete";
   a.href = '#';
   a.onclick = deleteItem;
   
-  document.getElementById('container').appendChild(div1);
-  div1.appendChild(div2);
-  div2.appendChild(p, a);
-  p.appendChild(label);
-  label.insertAdjacentHTML('afterbegin', '<input type="checkbox" class="form-check-input" onchange="lineThrough()"></input>');
-  
+  document.getElementById('container').append(div1);
+  div1.append(div2);
+  div2.append(p, a);
+  p.append(checkbox, label);
 
   input.value = '';
   
@@ -62,8 +66,14 @@ function deleteItem(){
 
 function lineThrough(){
   if( this.checked ) {
-    this.parentNode.classList.add("line-through");
+    this.nextElementSibling.classList.add("line-through");
   }else{
-    this.parentNode.classList.remove("line-through");
+    this.nextElementSibling.classList.remove("line-through");
   };
+};
+
+function chengeCheckbox() {
+  let check = this.previousSibling;
+  check.checked = check.checked ? false : true;
+  lineThrough.apply(check);
 };
