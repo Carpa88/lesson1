@@ -1,7 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
-document.getElementById('button-addon2').onclick = addItem;
+let form = document.getElementById('to-do-form');
+form.addEventListener('submit', addItem);
+
 let input = document.getElementById('input');
 
 function addItem () {
@@ -60,8 +62,8 @@ function deleteItem(){
 
 function lineThrough(){
   if( this.checked ) {
-    this.nextElementSibling.classList.add("line-through");
+    this.parentNode.classList.add("line-through");
   }else{
-    this.nextElementSibling.classList.remove("line-through");
+    this.parentNode.classList.remove("line-through");
   };
 };
