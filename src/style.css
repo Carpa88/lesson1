@@ -2,13 +2,19 @@
     margin: 100px 0 30px 0;
     color: #007bff;
 }
-.error-text {
+.error-text{
     color: red;
     text-align: center; 
 }
-.line-through {
+.line-through{
     text-decoration: line-through;
 }
 .form-check-input {
     margin-right: 10px;
+}
+.form-check-label{
+    display: inline;
+}
+.deleteBtn {
+   height: 40px;
 }

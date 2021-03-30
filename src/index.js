@@ -12,14 +12,12 @@ function addItem () {
   let p = document.createElement('p');
   let label = document.createElement('label');
   let checkbox = document.createElement('input');
-  let a = document.createElement('a');
-  
-  input.value = 'Get started with Bootstrap via npm with our starter project! Head to the twbs/bootstrap-npm-starter template repository to see how to build and customize Bootstrap in your own npm project. Includes Sass compiler, Autoprefixer, Stylelint, PurgeCSS, and Bootstrap Icons.'
-
+  let button = document.createElement('button');
+ 
   if (input.value) {
   div1.className = "card";
-  div2.className = "card-body";
-  p.className = "card-text";
+  div2.className = "card-body row";
+  p.className = "card-text col-11";
 
   label.innerHTML = input.value;
   label.className = 'form-check-label';
@@ -29,14 +27,14 @@ function addItem () {
   checkbox.className = 'form-check-input';
   checkbox.onchange = lineThrough;
   
-  a.className = "btn btn-primary";  
-  a.innerHTML = "Delete";
-  a.href = '#';
-  a.onclick = deleteItem;
+  button.className = "btn btn-primary col-1 deleteBtn";  
+  button.innerHTML = "Delete";
+  button.href = '#';
+  button.onclick = deleteItem;
   
   document.getElementById('container').append(div1);
   div1.append(div2);
-  div2.append(p, a);
+  div2.append(p, button);
   p.append(checkbox, label);
 
   input.value = '';
