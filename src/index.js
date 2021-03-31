@@ -23,7 +23,6 @@ function addItem (e) {
 
   label.innerHTML = input.value;
   label.className = 'form-check-label';
-  label.onclick = chengeCheckbox;
 
   checkbox.type = 'checkbox';
   checkbox.className = 'form-check-input';
@@ -70,8 +69,4 @@ function lineThrough(){
   }else{
     this.parentNode.classList.remove("line-through");
   };
-};
-function chengeCheckbox() {
-  let check = this.firstChild;
-  lineThrough.apply(check);
 };
