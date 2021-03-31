@@ -18,8 +18,8 @@ function addItem (e) {
  
   if (input.value) {
   div1.className = "card";
-  div2.className = "card-body row";
-  p.className = "card-text col-11";
+  div2.className = "row align-items-center card-body";
+  p.className = "col-11 card-text";
 
   label.innerHTML = input.value;
   label.className = 'form-check-label';
