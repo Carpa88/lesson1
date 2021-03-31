@@ -6,7 +6,9 @@ form.addEventListener('submit', addItem);
 
 let input = document.getElementById('input');
 
-function addItem () {
+function addItem (e) {
+  e.preventDefault();
+
   let div1 = document.createElement('div');
   let div2 = document.createElement('div');
   let p = document.createElement('p');
@@ -29,16 +31,16 @@ function addItem () {
   
   button.className = "btn btn-primary col-1 deleteBtn";  
   button.innerHTML = "Delete";
-  button.href = '#';
   button.onclick = deleteItem;
   
   document.getElementById('container').append(div1);
   div1.append(div2);
   div2.append(p, button);
-  p.append(checkbox, label);
+  p.append(label);
+  label.prepend(checkbox);
 
   input.value = '';
-  
+
   deleteError();
 
   }else{
@@ -64,14 +66,12 @@ function deleteItem(){
 
 function lineThrough(){
   if( this.checked ) {
-    this.nextElementSibling.classList.add("line-through");
+    this.parentNode.classList.add("line-through");
   }else{
-    this.nextElementSibling.classList.remove("line-through");
+    this.parentNode.classList.remove("line-through");
   };
 };
-
 function chengeCheckbox() {
-  let check = this.previousSibling;
-  check.checked = check.checked ? false : true;
+  let check = this.firstChild;
   lineThrough.apply(check);
 };
